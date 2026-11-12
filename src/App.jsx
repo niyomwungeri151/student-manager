@@ -188,7 +188,7 @@ export default function App() {
             onClick={() => setActivePage("students")}
           >
             <span className="nav-icon" aria-hidden="true">▤</span>
-            Student directory
+            Directory
             <span className="nav-count">{students.length}</span>
           </button>
           <button
@@ -196,7 +196,7 @@ export default function App() {
             onClick={() => setActivePage("manage")}
           >
             <span className="nav-icon" aria-hidden="true">✎</span>
-            Manage students
+            Manage
           </button>
         </nav>
 

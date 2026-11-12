@@ -992,22 +992,29 @@ a:focus-visible {
   }
 
   .main-nav {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
   }
 
   .nav-link {
     min-height: 38px;
     justify-content: center;
-    gap: 7px;
-    padding: 0 8px;
-    font-size: 11px;
+    gap: 5px;
+    padding: 0 5px;
+    font-size: 10px;
   }
 
   .nav-count {
+    display: none;
+  }
+
+  .nav-icon {
+    width: auto;
+  }
+
+  .top-nav-count {
     min-width: auto;
     padding: 2px 5px;
-    margin-left: 0;
   }
 
   .topbar {
