@@ -49,12 +49,17 @@ export default function App() {
   const [formStudent, setFormStudent] = useState(emptyStudent);
   const [editingId, setEditingId] = useState(null);
   const [photoError, setPhotoError] = useState("");
+  const [storageError, setStorageError] = useState("");
 
   useEffect(() => {
     try {
       localStorage.setItem(STUDENTS_STORAGE_KEY, JSON.stringify(students));
+      setStorageError("");
     } catch (error) {
       console.error("Could not save student records in this browser.", error);
+      setStorageError(
+        "Student records could not be saved in this browser. Check that browser storage is enabled and there is enough space.",
+      );
     }
   }, [students]);
 
@@ -214,7 +219,6 @@ export default function App() {
               <strong>Admin Manager</strong>
               <span>Administrator</span>
             </div>
-            <span className="profile-menu" aria-hidden="true">···</span>
           </div>
         </div>
       </aside>
@@ -265,6 +269,12 @@ export default function App() {
             <div className="topbar-avatar">AM</div>
           </div>
         </header>
+
+        {storageError && (
+          <div className="storage-error" role="alert">
+            {storageError}
+          </div>
+        )}
 
         {activePage === "overview" && (
           <section className="page-content">
